@@ -247,7 +247,7 @@ Loki S01 or Loki S01E04 or Lucifer S03E24</pre>
 
 ╔═══ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═══╗ 
 ➲ <a href=https://t.me/MrTechMovies_Group> @MR_TECH_MOVIES </a>
-➲ <a href=https://t.me/OTT_RELEASE_MOVIE> @OTT_RELEASE_MOVIES </a>
+➲ <a href=https://t.me/OTT_RELEASE_MOVIE> @OTT_RELEASE_MOVIE </a>
 ╚═══ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═══╝</b>"""
 
     IMDB_TEMPLATE_TXT = """
