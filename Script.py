@@ -245,8 +245,11 @@ Loki S01 or Loki S01E04 or Lucifer S03E24</pre>
 
     CAPTION = """<b>📂 ғɪʟᴇɴᴀᴍᴇ : {file_name}
 
-<b>⚙️ sɪᴢᴇ : {file_size}</b>
-<a href=''></a>""" 
+<b>⚙️ sɪᴢᴇ : {file_size}</b>╔═══ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═══╗ 
+➲ <a href=https://t.me/MrTechMovies_Group> @MR_TECH_MOVIES </a>
+➲ <a href=https://t.me/OTT_RELEASE_MOVIE>  
+@OTT_RELEASE_MOVIE </a>
+╚═══ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═══╝""" 
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {qurey}
