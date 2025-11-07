@@ -246,8 +246,8 @@ Loki S01 or Loki S01E04 or Lucifer S03E24</pre>
     CAPTION = """<b>📂 ғɪʟᴇɴᴀᴍᴇ : {file_name}
 
 ╔═══ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═══╗ 
-➲ <a href=https://t.me/MrTechMovies_Group> @MR_TECH_MOVIES </a>
-➲ <a href=https://t.me/OTT_RELEASE_MOVIE> @OTT_RELEASE_MOVIE </a>
+➲ <a href=https://t.me/Cinema_Lokam_Movies_Group> @Cinema_Lokam </a>
+➲ <a href=https://t.me/Cinema_Updates_OTT> @Cinema_Updates_OTT </a>
 ╚═══ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═══╝</b>"""
 
     IMDB_TEMPLATE_TXT = """
@@ -754,3 +754,4 @@ Example:- /set_caption 📕 File Name: {filename}
 
 
     
+
