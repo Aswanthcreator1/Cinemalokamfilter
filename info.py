@@ -63,11 +63,11 @@ DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://CINEMA_LOKAM_DB:CINEMA
 DATABASE_NAME = environ.get('DATABASE_NAME', "techvjclonefilterbot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'vjcollection')
 
-MULTIPLE_DATABASE = bool(environ.get('MULTIPLE_DATABASE', False)) # Set True or False
+MULTIPLE_DATABASE = bool(environ.get('MULTIPLE_DATABASE', True)) # Set True or False
 
 # If Multiple Database Is True Then Fill All Three Below Database Uri Else You Will Get Error.
-O_DB_URI = environ.get('O_DB_URI', "mongodb+srv://CINEMALOKAMFILTER:CINEMALOKAMFILTER@cluster0.thzmwng.mongodb.net/?appName=Cluster0")   # This Db Is For Other Data Store
-F_DB_URI = environ.get('F_DB_URI', "")   # This Db Is For File Data Store
+O_DB_URI = environ.get('O_DB_URI', "")   # This Db Is For Other Data Store
+F_DB_URI = environ.get('F_DB_URI', "mongodb+srv://CINEMALOKAMFILTER:CINEMALOKAMFILTER@cluster0.thzmwng.mongodb.net/?appName=Cluster0")   # This Db Is For File Data Store
 S_DB_URI = environ.get('S_DB_URI', "")   # This Db is for File Data Store When First Db Is Going To Be Full.
 
 
@@ -143,7 +143,7 @@ MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 
 
 # Choose Option Settings 
-LANGUAGES = ["malayalam", "mal", "tamil", "tam" ,"english", "eng", "hindi", "hin", "telugu", "tel", "kannada", "kan"]
+LANGUAGES = ["malayalam","tamil","english", "hindi", "telugu", "kannada"]
 SEASONS = ["season 1", "season 2", "season 3", "season 4", "season 5", "season 6", "season 7", "season 8", "season 9", "season 10"]
 EPISODES = ["E01", "E02", "E03", "E04", "E05", "E06", "E07", "E08", "E09", "E10", "E11", "E12", "E13", "E14", "E15", "E16", "E17", "E18", "E19", "E20", "E21", "E22", "E23", "E24", "E25", "E26", "E27", "E28", "E29", "E30", "E31", "E32", "E33", "E34", "E35", "E36", "E37", "E38", "E39", "E40"]
 QUALITIES = ["360p", "480p", "720p", "1080p", "1440p", "2160p"]
@@ -196,4 +196,5 @@ else:
 # Don't Remove Credit @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
+
 
