@@ -23,11 +23,6 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 lock = asyncio.Lock()
 
-tracemalloc.start()
-
-
-TIMEZONE = "Asia/Kolkata"
-BUTTONS = {}
 BUTTON = {}
 BUTTONS = {}
 FRESH = {}
@@ -1855,35 +1850,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
         reply_markup = InlineKeyboardMarkup(buttons)
-        current_time = datetime.now(pytz.timezone(TIMEZONE))
-        curr_time = current_time.hour
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+        await query.answer(MSG_ALRT)
 
-if curr_time < 12:
-    gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞"
-elif curr_time < 17:
-    gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌓"
-elif curr_time < 21:
-    gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌘"
-else:
-    gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 🌑"
-
-try:
-    await client.edit_message_media(
-        query.message.chat.id,
-        query.message.id,
-        InputMediaPhoto(random.choice(PICS))
-    )
-    await query.message.edit_text(
-        text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-        reply_markup=reply_markup,
-        parse_mode=enums.ParseMode.HTML
-    )
-    await query.answer(MSG_ALRT)
-
-except Exception as e:
-    print(f"Error in start message edit: {e}")
-    await query.message.reply_text("⚠️ Something went wrong, please try again later.")
-        
     elif query.data == "clone":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start')
@@ -3285,6 +3263,7 @@ async def global_filters(client, message, text=False):
                 break
     else:
         return False
+
 
 
 
