@@ -1865,17 +1865,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 🌑"
         try:
-            await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-        await query.answer(MSG_ALRT)
+    await client.edit_message_media(
+        query.message.chat.id, 
+        query.message.id, 
+        InputMediaPhoto(random.choice(PICS))
+    )
+    await query.message.edit_text(
+        text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+        reply_markup=reply_markup,
+        parse_mode=enums.ParseMode.HTML
+    )
+    await query.answer(MSG_ALRT)
+
+except Exception as e:
+    print(f"Error in start message edit: {e}")
+    await query.message.reply_text("⚠️ Something went wrong, please try again later.")
 
     elif query.data == "clone":
         buttons = [[
@@ -3278,5 +3282,6 @@ async def global_filters(client, message, text=False):
                 break
     else:
         return False
+
 
 
