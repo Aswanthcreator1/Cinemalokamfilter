@@ -1857,18 +1857,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
         curr_time = current_time.hour
-        if curr_time < 12:
-            gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞"
-        elif curr_time < 17:
-            gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌓"
-        elif curr_time < 21:
-            gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌘"
-        else:
-            gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 🌑"
-        try:
+
+if curr_time < 12:
+    gtxt = "ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ 🌞"
+elif curr_time < 17:
+    gtxt = "ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌓"
+elif curr_time < 21:
+    gtxt = "ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌘"
+else:
+    gtxt = "ɢᴏᴏᴅ ɴɪɢʜᴛ 🌑"
+
+try:
     await client.edit_message_media(
-        query.message.chat.id, 
-        query.message.id, 
+        query.message.chat.id,
+        query.message.id,
         InputMediaPhoto(random.choice(PICS))
     )
     await query.message.edit_text(
@@ -1881,7 +1883,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 except Exception as e:
     print(f"Error in start message edit: {e}")
     await query.message.reply_text("⚠️ Something went wrong, please try again later.")
-
+        
     elif query.data == "clone":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start')
@@ -3283,6 +3285,7 @@ async def global_filters(client, message, text=False):
                 break
     else:
         return False
+
 
 
 
